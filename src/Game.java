@@ -115,26 +115,48 @@ public class Game
                 input.nextLine();
             }
 
-            // if cards have same value
+            // if top cards have same value
             else
             {
-                // each player puts their card at the bottom of their pile
-                player1.addCard(player1.getHand().remove(0));
-                player2.addCard(player2.getHand().remove(0));
-                System.out.println("It's a tie!");
-                input.nextLine();
-                /*int i = 0;
+                System.out.println("Rematch time!");
+                int i = 0;
                 while (player1.getHand().get(i).getPoint() == player2.getHand().get(i).getPoint())
                 {
-                    System.out.println("Rematch time!");
+                    i += 3;
                     Card p1NewCard = player1.getHand().get(i);
                     Card p2NewCard = player2.getHand().get(i);
                     System.out.println("Your new card:");
-                    System.out.println(p1NewCard);
+                    System.out.println(p1NewCard + "\n");
                     System.out.println("Computer's new card:");
-                    System.out.println(p2NewCard);
-                    //if ()
-                }*/
+                    System.out.println(p2NewCard + "\n");
+                    // if user's new card is higher than comp's new card
+                    if (p1NewCard.getPoint() > p2NewCard.getPoint())
+                    {
+                        System.out.println("You won the round!");
+                        for (int x = 0; x <= i; x++)
+                        {
+                            player1.addCard(player1.getHand().remove(0));
+                            player1.addCard(player2.getHand().remove(0));
+                        }
+                        break;
+                    }
+                    // if comp's new card is higher than user's new card
+                    else if (p2NewCard.getPoint() > p1NewCard.getPoint())
+                    {
+                        System.out.println("The computer won the round :(");
+                        for (int x = 0; x <= i; x++)
+                        {
+                            player2.addCard(player1.getHand().remove(0));
+                            player2.addCard(player2.getHand().remove(0));
+                        }
+                        break;
+                    }
+                    // if new cards have same rank
+                    else
+                    {
+                        System.out.println("Another tie! Another rematch!");
+                    }
+                }
 
             }
 
