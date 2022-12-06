@@ -53,7 +53,7 @@ public class Game
                 ranks[i] = "A";
                 values[i] = 1;
             }
-            else if (i < 11)
+            else if (i < 10)
             {
                 ranks[i] = Integer.toString(i + 1);
                 values[i] = i + 1;
@@ -159,15 +159,15 @@ public class Game
             {
                 if (player2.getNumCards() == 10)
                 {
-                    System.out.println("Computer has 10 cards left in your hand!");
+                    System.out.println("Computer has 10 cards left!");
                 }
                 else if (player2.getNumCards() == 5)
                 {
-                    System.out.println("Computer has 5 cards left in your hand!");
+                    System.out.println("Computer has 5 cards left!");
                 }
                 else if (player2.getNumCards() == 1)
                 {
-                    System.out.println("Computer has 1 card left in your hand!");
+                    System.out.println("Computer has 1 card left! You're about to win!");
                 }
                 input.nextLine();
             }
